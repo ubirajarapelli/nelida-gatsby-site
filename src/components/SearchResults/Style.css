@@ -1,0 +1,28 @@
+.result-box {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 45%;
+  max-height: 460px;
+  padding: 1em;
+  overflow: hidden ;
+  overflow-y: scroll;
+  scroll-snap-align: start;
+  background-color: #ffffff;
+  box-shadow: 6px 8px 24px 0 #202f3933;
+}
+.result-box a {
+  display: block !important;
+}
+
+.result-box li {
+  border-top: 1px solid #efefef;
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+
+.result-box .HitCount {
+  margin-bottom: 24px;
+}
+
+
