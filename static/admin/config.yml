@@ -20,5 +20,18 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Categorias", name: "categories", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+  - name: "authors"
+    label: "Autores"
+    folder: "content"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }

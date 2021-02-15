@@ -3,8 +3,11 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import SharePost from '../components/SharePost'
+import Subscribe from '../components/Subscribe'
+import PrevNextPosts from '../components/PrevNextPosts'
+import Categories from '../components/Categories'
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const { frontmatter: { title, date }, html} = data.markdownRemark
 
   return (
@@ -65,14 +68,10 @@ const BlogPost = ({ data }) => {
                   <li>The fact that our law enforcers are wasting their time on the issues which are not of a primary citizen’s concern is a bit worrying…</li>
                 </ul>
                 <p>All in all, our Houston-based law firm will be glad to inform you of any further developments for this story and help anyone who’ve found himself or herself entangled within this rotten system of minor fines and fees…</p>*/}
-                <div class="d-sm-flex align-items-sm-center offset-top-30 justify-content-sm-center justify-content-lg-start">
+                <div className="d-sm-flex align-items-sm-center offset-top-30 justify-content-sm-center justify-content-lg-start">
                   <SharePost />
                 </div>
-                <div class="naw-wrapper naw-wrapper-left"><a class="nav-prev" href="#"><span class="page-prev icon icon-lg icon-primary icon-round-small material-icons-navigate_before icon-shadow-primary"></span>
-                    <div class="nav-title">
-                      <h4 class="text-primary font-weight-bold">Previous Post</h4>
-                      <h6 class="text-regular">Texas SC rules compensation</h6>
-                    </div></a></div>
+                <PrevNextPosts data={pageContext} />
               </div>
               <div class="news-post-written">
                 <div class="unit flex-column flex-lg-row align-items-lg-center unit-spacing-xl">
@@ -155,32 +154,9 @@ const BlogPost = ({ data }) => {
             <div class="col-md-10 col-lg-12 col-sm-12">
               <div class="row">
                 <div class="col-lg-6 col-xl-12 col-sm-12">
-                  <div class="subscribe-block">
-                    <div class="subscribe-block-top">
-                      <h4 class="font-weight-bold">Need legal advice?</h4>
-                      <p>We will be sending you all the best cases we've worked out with our clients and more!</p>
-
-                      <form class="rd-mailform text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                        <div class="form-wrap">
-                          <label class="form-label" for="contact-email">Enter your email</label>
-                          <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required" />
-                        </div>
-                        <button class="btn btn-primary" type="submit">subscribe</button>
-                      </form>
-                    </div>
-                    <div class="subscribe-block-bottom">
-                      <h4>Legal insights on social networks</h4>
-                      <ul class="list-inline list-inline-xs">
-                        <li><a class="icon icon-white icon-xs fa-facebook" href="#"></a></li>
-                        <li><a class="icon icon-white icon-xs fa-twitter" href="#"></a></li>
-                        <li><a class="icon icon-white icon-xs fa-google-plus" href="#"></a></li>
-                        <li><a class="icon icon-white icon-xs fa-linkedin" href="#"></a></li>
-                        <li><a class="icon icon-white icon-xs fa-pinterest" href="#"></a></li>
-                      </ul>
-                    </div>
-                  </div>
+                  <Subscribe />
                 </div>
-                <div class="col-lg-6 col-xl-12 col-sm-12">
+                {/* <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg d-lg-none d-xl-block" />
                   <h4 class="font-weight-bold">Legal insights</h4>
                   <article class="post text-left">
@@ -219,18 +195,19 @@ const BlogPost = ({ data }) => {
                     </div>
                     <p>Just recently a Texas municipal court judge had fined a woman $1,590 for a decal on her car license plate being missing… Though just a few days after, she has…</p>
                   </article>
-                </div>
-                <div class="col-lg-6 col-xl-12 col-sm-12">
+                </div> */}
+                {/* <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg" />
                   <h4 class="font-weight-bold">Quotes on Law in Our Society</h4>
                   <blockquote class="quote quote-default quote-default-small">
                     <q class="h4">At his best, man is the noblest of all animals; separated from law and justice he is the worst.</q>
                     <cite class="h6 text-lg-right">— Aristotle</cite>
                   </blockquote>
-                </div>
+                </div> */}
                 <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg" />
-                  <h4 class="font-weight-bold">Categories</h4>
+                  <Categories />
+                  {/* <h4 class="font-weight-bold">Categories</h4>
                   <ul class="list text-primary font-italic text-left">
                     <li><a href="#"> Construction Law & Litigation</a></li>
                     <li><a href="#"> Family Law</a></li>
@@ -242,9 +219,9 @@ const BlogPost = ({ data }) => {
                     <li><a href="#"> Mergers & Acquisitions</a></li>
                     <li><a href="#"> Tips for Business Litigation</a></li>
                     <li><a href="#"> USERRA</a></li>
-                  </ul>
+                  </ul> */}
                 </div>
-                <div class="col-lg-6 col-xl-12 col-sm-12">
+                {/* <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg" />
                   <h4 class="font-weight-bold">Archives</h4>
                   <ul class="list text-primary font-italic text-left">
@@ -252,8 +229,8 @@ const BlogPost = ({ data }) => {
                     <li><a href="#"> May 2016</a></li>
                     <li><a href="#"> April 2016</a></li>
                   </ul>
-                </div>
-                <div class="col-lg-6 col-xl-12 col-sm-12">
+                </div> */}
+                {/* <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg" />
                   <h4 class="font-weight-bold">Calendar</h4>
 
@@ -266,8 +243,8 @@ const BlogPost = ({ data }) => {
                     </div>
                     <div class="rdc-table"></div>
                   </div>
-                </div>
-                <div class="col-lg-6 col-xl-12 col-sm-12">
+                </div> */}
+                {/* <div class="col-lg-6 col-xl-12 col-sm-12">
                   <hr class="divider-lg" />
                   <h4 class="font-weight-bold">Recent Comments</h4>
                   <ul class="list list-xl comments">
@@ -284,7 +261,7 @@ const BlogPost = ({ data }) => {
                       <p class="font-italic">admin on</p><a class="h5 text-regular" href="post-standard.html">What the federal legal consequences of Florida’s shooting will be?</a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -5653,10 +5653,16 @@ h6.heading-custom {
 .page-prev {
   margin-right: 30px;
 }
+.page-next {
+  margin-left: 30px;
+}
 
 @media (min-width: 768px) {
   .page-prev {
-    margin-right: 108px;
+    /* margin-right: 108px; */
+  }
+  .page-next {
+    /* margin-left: 108px; */
   }
 }
 
